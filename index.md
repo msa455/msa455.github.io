@@ -1,8 +1,8 @@
 # Portfolio
 
-All code available here(https://github.com/msa455/msa455.github.io)
+All code available [here](https://github.com/msa455/msa455.github.io)
 
-## Text Simplifier
+## [Text Simplifier](https://github.com/msa455/msa455.github.io/tree/master/nlp)
 
 This was my final project for my Natural Language Processing class. Me and my partner created a program that allows you to translate a 
 difficult piece of English text into a standardized “simplified” English. We initially had to decide what “simple” meant, and 
@@ -22,13 +22,13 @@ of Ogden’s manual translation that utilized more paraphrasing than term for te
 I would like to work on this project further in the future, utilizing different alignment techniques to get more accurate translations. 
 Afterwards, I’d like to make a site to utilize this program to be able to simplify users’ queries in real time.
 
-## Hackathon Site
+## [Hackathon Site](https://github.com/msa455/msa455.github.io/tree/master/Hackathon%20Site)
 
 As Director of Operations for HackShanghai, I was also in charge of creating the website we would use for info and registration. 
 This was a basic project, using just simple HTML/CSS, and Javascript. The whole site was hosted on AWS with Heroku and we used 
 Typeform for handling our registrations. 
 
-##Jeopardy Analysis
+##[Jeopardy Analysis](https://github.com/msa455/msa455.github.io/tree/master/jeopardy)
 
 I’ve always loved jeopardy, so obviously I’ve wanted to try out for the show, but how do you study for it? That’s what I asked
 myself when I came across a massive dataset of previous Jeopardy questions. This was my first attempt at a project using some 
@@ -39,7 +39,7 @@ a proper list of topics to focus on for studying rather difficult. I’d like to
 skills I’ve learned to better categorize jeopardy’s many category names that are puns or play on words and see if I get a more 
 conclusive answer.
 
-## Twitter Crawler
+##[Valentine's Miner](https://github.com/msa455/msa455.github.io/tree/master/valentinesMiner)
 
 Valentine’s day is a pretty polarizing time of year, eliciting reactions from excitement to depression. This seemed like 
 perfect subject matter for some in depth analysis, so I went to crawling twitter, compiled a dataset of around 10,000 tweets,
