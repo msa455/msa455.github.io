@@ -1,6 +1,6 @@
 # Portfolio
 
-All code available at (https://github.com/msa455/msa455.github.io)
+All code available here(https://github.com/msa455/msa455.github.io)
 
 ## Text Simplifier
 
