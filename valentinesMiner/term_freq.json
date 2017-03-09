@@ -16,27 +16,37 @@
         {
           "col": "data",
           "idx": "day",
-          "val": 223
+          "val": 301
         },
         {
           "col": "data",
           "idx": "love",
-          "val": 186
+          "val": 189
         },
         {
           "col": "data",
           "idx": "happy",
-          "val": 167
-        },
-        {
-          "col": "data",
-          "idx": "\ufe0f",
-          "val": 120
+          "val": 169
         },
         {
           "col": "data",
           "idx": "people",
-          "val": 118
+          "val": 147
+        },
+        {
+          "col": "data",
+          "idx": "\ufe0f",
+          "val": 124
+        },
+        {
+          "col": "data",
+          "idx": "https",
+          "val": 122
+        },
+        {
+          "col": "data",
+          "idx": ":/",
+          "val": 116
         },
         {
           "col": "data",
@@ -45,23 +55,13 @@
         },
         {
           "col": "data",
-          "idx": "valentine's",
-          "val": 97
+          "idx": "\u2019",
+          "val": 100
         },
         {
           "col": "data",
-          "idx": "play",
-          "val": 93
-        },
-        {
-          "col": "data",
-          "idx": "1,000",
-          "val": 89
-        },
-        {
-          "col": "data",
-          "idx": "alive",
-          "val": 89
+          "idx": "trump",
+          "val": 98
         }
       ]
     },
