@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width-device-width,initial-scale=1.0">
+	<title>Test</title>
+
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script src="./node_modules/web3/dist/web3.min.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<h1>LockChain</h1>
+		<h2 id="contractAddress"></h2>
+		<img id="loader" src="https://loading.io/spinners/double-ring/lg.double-ring-spinner.gif">
+
+
+		<button id="initializeLockButton">Intialize Lock</button>
+
+		<label for="addAccount" class="col-lg-2 control-label">Add Account</label>
+		<input id="addAccount" type="text">
+
+		<button id="addUserButton">Add</button>
+
+
+		<label for="removeAccount" class="col-lg-2 control-label">Remove Account</label>
+		<input id="removeAccount" type="text">
+
+		<button id="removeUserButton">Remove</button>
+
+		<button id="unlock">Unlock</button>
+		<button id="lock">Lock</button>
+
+
+		<br>
+
+
+
+
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+
+	<script>
+		if(typeof web3 !== "undefined"){
+			web3 = new Web3(web3.currentProvider);
+		}	else{
+			web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+		}
+		//which account Im working with at the moment
+		//TODO: add button to change the account being used
+		web3.eth.defaultAccount = web3.eth.accounts[0];
+
+		var currentAccount = web3.eth.accounts[0];
+		//contract AVI data from remix
+		var LockContract = web3.eth.contract([
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_newUser",
+				"type": "address"
+			}
+		],
+		"name": "addUser",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "closeLock",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "initiateLock",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "openLock",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_addressToRemove",
+				"type": "address"
+			}
+		],
+		"name": "removeUser",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "arrayLength",
+		"outputs": [
+			{
+				"name": "count",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "checkLock",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "index",
+				"type": "uint256"
+			}
+		],
+		"name": "getLocPar",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "userAccts",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_addressToValidate",
+				"type": "address"
+			}
+		],
+		"name": "validateUser",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	}
+])
+		//contract address being referenced in remix
+		var contractAddress = "0x42e69bfbf9c6839ee6277da8909d9269cec9570e";
+
+		var Lock = LockContract.at(contractAddress);
+
+		console.log(Lock);
+
+		console.log(currentAccount);
+
+		$("#contractAddress").html("Current lock address: " + contractAddress);
+
+		//following functions call operations in the blockchain
+		//TODO: add callback functionalities
+
+		$("#addUserButton").click(function(){
+			var temp1 = '"' + $("#addAccount").val() + '"';
+			var temp2 = $("#addAccount").val();
+			console.log(temp1);
+			console.log(temp2);
+			Lock.addUser(temp2);
+			//console.log($("#addAccount").val());
+		});
+
+		$("#removeUserButton").click(function(){
+			var temp1 = $("#addAccount").val();
+			Lock.removeUser(temp1);
+		});
+
+		$("#initializeLockButton").click(function(){
+			Lock.initiateLock();
+		});
+
+		$("#unlock").click(function(){
+			Lock.openLock();
+		});
+
+		$("#lock").click(function(){
+			Lock.closeLock();
+		});
+
+
+	</script>
+</body>
