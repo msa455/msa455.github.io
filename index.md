@@ -50,7 +50,7 @@ Afterwards, I’d like to make a site to utilize this program to be able to simp
 
 As Director of Operations for HackShanghai, I was also in charge of creating the website we would use for info and registration. 
 This was a basic project, using just simple HTML/CSS, and Javascript. The whole site was hosted on AWS with Heroku and we used 
-Typeform for handling our registrations. Used to be available at 2 
+Typeform for handling our registrations.
 
 
 
